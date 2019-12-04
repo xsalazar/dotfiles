@@ -1,5 +1,7 @@
 [include]
     path = ~/.gitconfig.local
+[core]
+    excludesFile = ~/.gitconfig.global
 [alias]
     a = add --all
     ai = add -i
