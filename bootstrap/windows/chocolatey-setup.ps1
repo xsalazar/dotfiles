@@ -17,5 +17,5 @@ choco install -y slack
 choco install -y microsoft-windows-terminal
 choco install -y exercism-io-cli
 
-& $env:ProgramFiles\Git\git-bash.exe -c '../init.sh'
+& $env:ProgramFiles\Git\git-bash.exe -c 'cd ../../ && ./init.sh'
 pause
