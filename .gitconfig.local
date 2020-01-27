@@ -1,4 +1,4 @@
 # This file is meant for local machine specific configurations
 [user]
-    name = FirstName LastName
-    email = first.last@email.com
+    name = # FirstName LastName
+    email = # first.last@email.com
