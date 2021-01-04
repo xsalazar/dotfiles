@@ -12,14 +12,14 @@ alias tfd='TF_LOG=TRACE terraform'
 alias tff='terraform fmt --recursive'
 
 function workspace_fn() {
-	if [ -d .terraform ]; then
-		workspace="$(command terraform workspace show 2>/dev/null)"
-		echo " [$workspace]"
-	fi
+  if [ -d .terraform ]; then
+    workspace="$(command terraform workspace show 2>/dev/null)"
+    echo " [$workspace]"
+  fi
 }
 
 if [ -f $HOME/.bashrc.local ]; then
-    . $HOME/.bashrc.local
+  . $HOME/.bashrc.local
 fi
 
 # Prompt

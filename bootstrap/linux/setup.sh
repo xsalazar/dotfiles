@@ -39,7 +39,7 @@ install_sublime () {
 install_jetbrains () {
   echo "Installing Jetbrains Toolbox..."
   JETBRAINS_INSTALL_PATH="/tmp/jetbrains-toolbox-install"
-  wget -P /tmp https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.16.6319.tar.gz # Cannot currently find a way to dynamically get the latest version
+  wget -P /tmp https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.19.7784.tar.gz # Cannot currently find a way to dynamically get the latest version
   mkdir $JETBRAINS_INSTALL_PATH
   tar xvzf /tmp/jetbrains-toolbox*.tar.gz -C $JETBRAINS_INSTALL_PATH
   cd $JETBRAINS_INSTALL_PATH && ./jetbrains-toolbox*/jetbrains-toolbox
@@ -59,21 +59,14 @@ install_vscode () {
 
 install_terraform () {
   echo "Installing Terraform..."
-  wget -P /tmp https://releases.hashicorp.com/terraform/0.12.20/terraform_0.12.20_linux_amd64.zip # Cannot currently find a way to dynamically get the latest version
-  rm /usr/local/bin/terraform
-  unzip /tmp/terraform*.zip -d /usr/local/bin/
-
-  rm /tmp/terraform*.zip
+  curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+  sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+  sudo apt-get update && sudo apt-get install terraform
 }
 
 install_slack () {
   echo "Installing Slack..."
   snap install slack --classic
-}
-
-install_exercism () {
-  echo "Installing Exercism..."
-  snap install exercism
 }
 
 apt-get update
@@ -89,7 +82,6 @@ install_awscli
 install_vscode
 install_terraform
 install_slack
-install_exercism
 
 ../.././init.sh
 read -p "Press enter to continue..."

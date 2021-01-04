@@ -15,7 +15,6 @@ choco install -y vscode
 choco install -y terraform
 choco install -y slack
 choco install -y microsoft-windows-terminal
-choco install -y exercism-io-cli
 
-& $env:ProgramFiles\Git\git-bash.exe -c 'cd ../../ && ./init.sh'
+& $env:ProgramFiles\Git\usr\bin\bash.exe -c 'cd ../../ && ./init.sh'
 pause
